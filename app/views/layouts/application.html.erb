@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
-    <%= csrf_meta_tag %>
+    <title><%= @title %></title>
+    <%= render 'layouts/stylesheets' %>
+
+
   </head>
   <body>
-    <%= yield %>
+   <center><div class="container">
+      <header>
+        <%= image_tag("http://railstutorial.org/images/sample_app/logo.png", :alt => "Sample App", :class => "round") %>
+        <nav class="round">
+          <ul>
+            <li><%= link_to "Home", '/' %></li>
+            <li><%= link_to "Help", '/help' %></li>
+            <li><%= link_to "Sign in", '/signin' %></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="round">
+        <%= yield %>
+      </section>
+      <%= render 'layouts/footer' %>
+
+    </div></center>
+
   </body>
 </html>
+
+
+
